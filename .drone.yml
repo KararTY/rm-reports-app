@@ -6,14 +6,13 @@ steps:
 - name: Install the app
   image: node:lts-buster
   pull: if-not-exists
-  settings: 
-    commands:
-    - npm install
-    - npm run build
-    - mkdir /drone/tmp
-    - mv /drone/src/* /drone/tmp
-    - mv /drone/tmp/build/* /drone/src
-    - rm -rf web_modules _dist_ __snowpack__
+  commands: 
+  - npm install
+  - npm run build
+  - mkdir /drone/tmp
+  - mv /drone/src/* /drone/tmp
+  - mv /drone/tmp/build/* /drone/src
+  - rm -rf web_modules _dist_ __snowpack__
 
 - name: Transfer Source
   image: appleboy/drone-scp
