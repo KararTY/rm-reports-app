@@ -7,7 +7,8 @@ module.exports = {
     '@snowpack/plugin-babel',
     '@snowpack/plugin-dotenv',
     '@snowpack/plugin-typescript',
-    "@snowpack/plugin-sass",
+    "@snowpack/plugin-webpack",
+    "@snowpack/plugin-sass"
   ],
   install: [
     /* ... */

@@ -13,7 +13,6 @@
   "bugs": {
     "url": "https://github.com/repair-manual/rm-reports-app/issues"
   },
-  "homepage": "https://github.com/repair-manual/rm-reports-app",
   "license": "MIT",
   "scripts": {
     "start": "snowpack dev",
@@ -31,12 +30,14 @@
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.12.1",
     "@babel/plugin-proposal-decorators": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
     "@babel/preset-typescript": "^7.12.1",
     "@snowpack/plugin-babel": "^2.1.4",
     "@snowpack/plugin-dotenv": "^2.0.4",
     "@snowpack/plugin-run-script": "^2.2.0",
     "@snowpack/plugin-sass": "^1.1.1",
     "@snowpack/plugin-typescript": "^1.1.0",
+    "@snowpack/plugin-webpack": "^2.1.1",
     "@types/snowpack-env": "^2.3.1",
     "@typescript-eslint/eslint-plugin": "^4.6.1",
     "@typescript-eslint/parser": "^4.6.1",

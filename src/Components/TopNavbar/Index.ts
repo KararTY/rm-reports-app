@@ -75,7 +75,7 @@ const TopNavbar: Accessors = {
       <div class="container">
         <div class="navbar-brand">
           <div class="navbar-item">
-            <img src="/RG_MEDIAWIKI.png"/>
+            <img src="./RG_MEDIAWIKI.png"/>
           </div>
           <div class="navbar-item has-text-weight-bold">Repair Manual Reports App</div>
         </div>
