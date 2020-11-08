@@ -13,6 +13,7 @@ steps:
   - mv /drone/src/* /drone/tmp
   - mv /drone/tmp/build/* /drone/src
   - rm -rf web_modules _dist_ __snowpack__
+  - sed -i 's/src="\/js\//src=".\/js\//g' index.html
 
 - name: Transfer Source
   image: appleboy/drone-scp
