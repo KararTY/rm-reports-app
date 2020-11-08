@@ -1,8 +1,27 @@
 kind: pipeline
 name: Installation
 
+# Configuration
+volumes:
+  - name: cache
+    host: 
+      path: /tmp/cache
+
 steps:
 
+# Restore cache
+- name: Restore Installation Cache
+  image: drillster/drone-volume-cache
+  pull: if-not-exists
+  volumes:
+  - name: cache
+    path: /cache
+  settings:
+    restore: true
+    mount:
+    - node_modules
+
+# Install the app
 - name: Install the app
   image: node:lts-buster
   pull: if-not-exists
@@ -13,7 +32,19 @@ steps:
   - mv /drone/src/* /drone/tmp
   - mv /drone/tmp/build/* /drone/src
   - rm -rf web_modules _dist_ __snowpack__
-  - sed -i 's/src="\/js\//src=".\/js\//g' index.html
+  - sed -i 's|src="/js/|src="./js/|g' index.html
+
+# Rebuild cache
+- name: Build Installation Cache
+  image: drillster/drone-volume-cache
+  pull: if-not-exists
+  volumes:
+  - name: cache
+    path: /cache
+  settings:
+    rebuild: true
+    mount:
+    - node_modules
 
 - name: Transfer Source
   image: appleboy/drone-scp
