@@ -20,7 +20,7 @@
     "test": "echo \"This does not include a test runner yet.\" && exit 1",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "prettier --check \"src/**/*.ts\"",
-    "release": "standard-version && git push --follow-tags origin master"
+    "release": "standard-version"
   },
   "dependencies": {
     "@octokit/core": "^3.2.1",
