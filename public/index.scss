@@ -1,0 +1,61 @@
+@charset "utf-8";
+
+// @font-face {
+//   font-family: 'Fira Sans';
+//   font-style: normal;
+//   font-weight: 400;
+//   font-display: swap;
+//   src: local('Fira Sans Regular'), local('FiraSans-Regular'), url('../font/FiraSans-Regular.ttf') format('truetype');
+// }
+// $family-sans-serif: 'Fira Sans', sans-serif;
+
+// Brand colors
+// Unset.
+
+// Global variables overwrite
+$dimensions: 16 24 32 48 64 96 128 300;
+$menu-item-hover-background-color: hsl(0, 0%, 86%);
+
+
+/*! bulma.io v0.8.2 | MIT License | github.com/jgthms/bulma */
+@import "../node_modules/bulma/sass/utilities/_all.sass";
+
+@import "../node_modules/bulma/sass/base/_all.sass";
+
+@import "../node_modules/bulma/sass/helpers/_all.sass";
+
+@import "../node_modules/bulma/sass/elements/_all.sass";
+
+@import "../node_modules/bulma/sass/form/_all.sass";
+
+@import "../node_modules/bulma/sass/grid/columns.sass";
+// @import "../node_modules/bulma/sass/grid/_all.sass";
+
+// @import "../node_modules/bulma/sass/layout/_all.sass";
+@import "../node_modules/bulma/sass/layout/section.sass";
+@import "../node_modules/bulma/sass/layout/hero.sass";
+
+// @import "../node_modules/bulma/sass/components/_all.sass";
+@import "../node_modules/bulma/sass/components/card.sass";
+// @import "../node_modules/bulma/sass/components/pagination.sass";
+// @import "../node_modules/bulma/sass/components/tabs.sass";
+@import "../node_modules/bulma/sass/components/level.sass";
+@import "../node_modules/bulma/sass/components/navbar.sass";
+@import "../node_modules/bulma/sass/components/menu.sass";
+@import "../node_modules/bulma/sass/components/modal.sass";
+
+@import "../node_modules/bulma/sass/form/_all.sass";
+
+.menu-list li a {
+  display: flex;
+  align-items: center;
+
+  .icon {
+    margin-right: 5px;
+  }
+}
+
+[is="rm-left-menu"] {
+  overflow-y: auto;
+  max-height: calc(100vh - 3.25rem - 0.75rem);
+}

@@ -1,0 +1,54 @@
+{
+  "name": "rm-reports-form",
+  "version": "1.0.0",
+  "author": {
+    "name": "Karar Al-Remahy",
+    "email": "alremahykarar@ymail.com",
+    "url": "https://alremahy.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/repair-manual/rm-reports-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/repair-manual/rm-reports-app/issues"
+  },
+  "homepage": "https://github.com/repair-manual/rm-reports-app",
+  "license": "MIT",
+  "scripts": {
+    "start": "snowpack dev",
+    "build": "snowpack build",
+    "test": "echo \"This does not include a test runner yet.\" && exit 1",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "prettier --check \"src/**/*.ts\"",
+    "release": "standard-version && git push --follow-tags origin master"
+  },
+  "dependencies": {
+    "@octokit/core": "^3.2.1",
+    "bulma": "^0.9.1",
+    "uce": "^1.11.10"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-proposal-decorators": "^7.12.1",
+    "@babel/preset-typescript": "^7.12.1",
+    "@snowpack/plugin-babel": "^2.1.4",
+    "@snowpack/plugin-dotenv": "^2.0.4",
+    "@snowpack/plugin-run-script": "^2.2.0",
+    "@snowpack/plugin-sass": "^1.1.1",
+    "@snowpack/plugin-typescript": "^1.1.0",
+    "@types/snowpack-env": "^2.3.1",
+    "@typescript-eslint/eslint-plugin": "^4.6.1",
+    "@typescript-eslint/parser": "^4.6.1",
+    "eslint": "^7.13.0",
+    "eslint-config-standard": "^16.0.1",
+    "eslint-config-standard-with-typescript": "^19.0.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.2",
+    "snowpack": "^2.17.0",
+    "standard-version": "^9.0.0",
+    "typescript": "^4.0.5"
+  }
+}
