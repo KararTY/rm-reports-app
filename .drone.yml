@@ -7,9 +7,6 @@ steps:
   image: node:lts-buster
   pull: if-not-exists
   settings: 
-    source: 
-      - '*'
-      - '.*'
     commands:
     - npm install
     - npm run build
