@@ -20,7 +20,10 @@ steps:
     restore: true
     mount:
     - node_modules
-
+  trigger:
+    branch:
+    - main
+    
 # Install the app
 - name: Install the app
   image: node:lts-buster
@@ -28,11 +31,9 @@ steps:
   commands: 
   - npm install
   - npm run build
-  - mkdir /drone/tmp
-  - mv /drone/src/* /drone/tmp
-  - mv /drone/tmp/build/* /drone/src
-  - rm -rf web_modules _dist_ __snowpack__
-  - sed -i 's|src="/js/|src="./js/|g' index.html
+  trigger:
+    branch:
+    - main
 
 # Rebuild cache
 - name: Build Installation Cache
@@ -45,7 +46,25 @@ steps:
     rebuild: true
     mount:
     - node_modules
+  trigger:
+    branch:
+    - main
 
+# Clean up 
+- name: Clean up
+  image: alpine
+  pull: if-not-exists
+  commands: 
+  - mkdir /drone/tmp
+  - mv /drone/src/* /drone/tmp
+  - mv /drone/tmp/build/* /drone/src
+  - rm -rf web_modules _dist_ __snowpack__
+  - sed -i 's|src="/js/|src="./js/|g' index.html
+  trigger:
+    branch:
+    - main
+
+# Transfer to the server
 - name: Transfer Source
   image: appleboy/drone-scp
   pull: if-not-exists
@@ -63,4 +82,4 @@ steps:
     rm: true
     trigger:
       branch:
-      - master
+      - main
