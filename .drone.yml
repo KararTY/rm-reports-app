@@ -3,7 +3,7 @@ name: Installation
 
 steps:
 
-- name: Transfer Source
+- name: Install the app
   image: node:lts-buster
   pull: if-not-exists
   settings: 
