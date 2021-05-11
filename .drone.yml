@@ -73,12 +73,12 @@ steps:
       from_secret: scp_host
     user: 
       from_secret: scp_user
-    password:
-      from_secret: scp_password
+    key:
+      from_secret: scp_key
     source: 
       - '*'
       - '.*'
-    target: '/var/www/products/repair-caption-search.zierhut-it.de/prod/editor'
+    target: '/var/www/tools.repair.wiki/prod/editor'
     rm: true
     trigger:
       branch:
